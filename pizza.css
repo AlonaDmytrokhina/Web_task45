@@ -5,13 +5,43 @@ body {
     background-color: #f9f9f9;
 }
 
+main {
+    flex: 1; /* Займає всю доступну ширину */
+    margin-right: 320px; /* Ширина aside + відступ (змініть за потребою) */
+}
+
+#top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1f1e1e;
+    color: white;
+    z-index: 1;
+    width: 100%;
+    height: 1em;
+    opacity: 0.9;
+}
+
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
+    background-color: #1f1e1e;
     color: white;
-    padding: 15px 30px;
+    padding: 10px 0 0 0;
+    
+}
+
+#phone{
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.header-top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    border-bottom: solid 1px white;
 }
 
 .logo {
@@ -19,43 +49,86 @@ header {
     font-weight: bold;
 }
 
+.logo-sale {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-top: 1em;
+    border-bottom: solid 1px rgb(227, 87, 12);
+}
+
+.header-prop {
+    margin-left: 8em;
+}
+
 .contact {
-    text-align: center;
-    line-height: 1.6;
+    padding: 10px 0;
+    display: flex;
+    gap: 30px;
+    color: rgba(254, 255, 252, 0.889);
 }
 
 .login button {
     background-color: orange;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 9px 20px;
     cursor: pointer;
     font-size: 1em;
     border-radius: 5px;
+    margin-left: 18em;
+}
+
+#flag-badge {
+    position: absolute;
+    top: 0px; /* Відступ зверху */
+    left: 10px; /* Відступ зліва */
+    height: 110px;
+    width: 7em;
+    background-color: #ff8c00; /* Колір фону бейджа */
+    color: white; /* Колір тексту бейджа */
+    padding: 5px 10px; /* Внутрішні відступи */
+    font-size: 12px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%); /* Вирізний трикутник знизу */
+}
+
+#bottom-badge {
+    position: fixed;
+    top: 51em; /* Відступ зверху */
+    left: 10px; /* Відступ зліва */
+    height: 110px;
+    width: 7em;
+    background-color: #ff8c00; /* Колір фону бейджа */
+    color: white; /* Колір тексту бейджа */
+    padding: 5px 10px; /* Внутрішні відступи */
+    font-size: 12px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    clip-path: polygon(0% 0%, 50% 10%, 100% 0%, 100% 100%, 0% 100%); /* Вирізний трикутник знизу */
 }
 
 .main-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: rgb(249, 243, 231);
+    padding-top: 5em; /* Додайте зсув для уникнення накладання на фіксований заголовок */
 }
 
 .categories {
     flex-basis: 100%;
-    padding: 20px 30px;
-    padding-top: 0;
+    padding: 20px 10px;
 }
 
 .categories-buttons {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .categories-buttons .category {
-    background-color: orange;
-    color: white;
+    background-color: rgb(249, 243, 231);
+    color: orange;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -65,43 +138,64 @@ header {
 
 main {
     flex: 1;
-    padding: 20px 30px;
 }
 
-h1 {
-    margin-top: 0;
+#allPizza{
+    display: flex;
+    justify-content: center;
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
+.numOfPizza{
+    background-color: orange;
+    color: #f9f9f9;
+    font-size: 0.7em;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.nBought {
+    background-color: orange;
+    color: #f9f9f9;
+    font-size: 0.7em;
+    border-radius: 20px;
+    padding: 3px 7px;
+}
+
 .pizza-menu {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
+    padding: 0 30px;
 }
 
 .pizza-card {
-    background-color: white;
+    position: relative; /* Відносне позиціонування для правильного розташування абсолютних елементів всередині */
+    background-color: #faf8f8;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    max-width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .pizza-card .label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: absolute; /* Абсолютне позиціонування */
+    top: 10px; /* Відступ від верхнього краю */
+    left: 10px; /* Відступ від лівого краю */
     background-color: red;
     color: white;
     padding: 5px 10px;
     font-size: 0.9em;
     border-radius: 5px;
+}
+
+.size-icon{
+    margin: 0;
 }
 
 .pizza-card .label.popular {
@@ -128,7 +222,7 @@ h1 {
 .sizes {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: 50px;
     justify-content: center;
     margin: 10px 0;
     color: #333;
@@ -139,25 +233,46 @@ button {
     background-color: orange;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     cursor: pointer;
     font-size: 1em;
     border-radius: 5px;
 }
 
 aside {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 300px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    overflow-y: auto;
-    height: 100vh;
+    background-color: #faf8f8;
+    width: 300px; /* Ширина бокової панелі */
+    height: 100vh; /* Займає всю висоту екрану */
+    position: fixed; /* Фіксоване позиціонування */
+    top: 0; /* У верхньому куті */
+    right: 0; /* У правому куті */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Прокрутка, якщо необхідно */
+    overflow-x: hidden; /* Ховаємо горизонтальну прокрутку */
+    z-index: 5; /* Підняти над іншими елементами, якщо необхідно */
+    padding-top: 0;
 }
 
-aside h2 {
-    text-align: center;
+#bought {
+    display: inline-block;
     color: #333;
-    margin-bottom: 20px;
+    margin: 0;
+    background-color: white;
+    padding: 2.1em 0 2.4em 0.4em;
+    font-size: 19px;
+}
+
+.clean {
+    margin-left: 5px;
+    color: #9a9999;
+    background-color: white;
+    padding: 0;
+    font-size: 11px;
+    width: 130px;
+}
+
+.top {
+    background-color: white;
 }
 
 .order-list {
@@ -167,11 +282,105 @@ aside h2 {
 }
 
 .order-list li {
-    background: #fff;
-    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #faf8f8;
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 100%;
+    border-bottom: solid 0.7px #bdbcbc;
+}
+
+.order-list h3 {
+    color: orange;
+    background-color: #faf8f8;
+    padding-left: 0;
+}
+
+.prop span {
+    margin-right: 10px;
+}
+
+.changing-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 0;
+
+}
+
+.plus,
+.minus,
+.delete {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minus {
+    background-color: #e94322;
+    color: white;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px rgb(239, 130, 130);
+    border: solid 0.5px #e52a2a;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.minus:hover {
+    background-color: #e52a2a;
+}
+
+.minus:active {
+    transform: scale(0.95);
+}
+
+.plus {
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px rgb(139, 239, 130);
+    border: solid 0.5px #45a049;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.plus:hover {
+    background-color: #45a049;
+}
+
+.plus:active {
+    transform: scale(0.95);
+}
+
+.delete {
+    background-color: white;
+    color: orange;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px #a5a4a4;
+    border: solid 0.5px #a5a4a4;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete:hover {
+    background-color: #cbcbca;
+}
+
+.delete:active {
+    transform: scale(0.95);
+}
+
+.order-list .boughtPizza {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    position: relative;
+    left: 20%;
+    border-radius: 10px;
 }
 
 .order-total {
@@ -187,14 +396,56 @@ aside h2 {
     font-size: 1em;
 }
 
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
+#sum{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+/* Оптимізовані медіа-запити */
+@media (max-width: 1500px) {
+    #enter {
+        margin-left: calc(13em - (5em * (1500 - 1200) / 300));
     }
-    
-    aside {
-        width: 100%;
-        height: auto;
-        position: static;
+}
+
+@media (max-width: 1400px) {
+    #enter {
+        margin-left: calc(8em - (5em * (1400 - 1200) / 200));
+    }
+}
+
+@media (max-width: 1300px) {
+    #enter {
+        margin-left: calc(3em - (5em * (1300 - 1200) / 100));
+    }
+}
+
+@media (max-width: 1200px) {
+    #enter {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1180px) {
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+        gap: 15em;
+    }
+    .lab{
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+        gap: 5em;
+    }
+    .lab{
+        display: none;
     }
 }
