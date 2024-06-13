@@ -1,0 +1,200 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.contact {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.login button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.categories {
+    flex-basis: 100%;
+    padding: 20px 30px;
+    padding-top: 0;
+}
+
+.categories-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categories-buttons .category {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pizza-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pizza-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.pizza-card .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.pizza-card .label.popular {
+    background-color: green;
+}
+
+.pizza-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.pizza-card h2 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.pizza-card p {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    justify-content: center;
+    margin: 10px 0;
+    color: #333;
+    font-size: 0.9em;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+aside {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 300px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    height: 100vh;
+}
+
+aside h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-list li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.order-total {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.order-total button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    aside {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+}
