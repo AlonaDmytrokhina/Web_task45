@@ -6,8 +6,8 @@ body {
 }
 
 main {
-    flex: 1; /* Займає всю доступну ширину */
-    margin-right: 320px; /* Ширина aside + відступ (змініть за потребою) */
+    flex: 1; 
+    margin-right: 320px;
 }
 
 #top-header {
@@ -134,6 +134,16 @@ header {
     cursor: pointer;
     font-size: 1em;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.categories-buttons .category:hover {
+    background-color: orange;
+    color: white;
+}
+
+.categories-buttons .category:active {
+    transform: scale(0.95);
 }
 
 main {
@@ -165,28 +175,31 @@ main {
 }
 
 .pizza-menu {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    
     gap: 25px;
-    justify-content: center;
+    
     padding: 0 30px;
 }
 
 .pizza-card {
-    position: relative; /* Відносне позиціонування для правильного розташування абсолютних елементів всередині */
+    position: relative;
     background-color: #faf8f8;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    width: 250px;
+    
+    width: 85%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .pizza-card .label {
-    position: absolute; /* Абсолютне позиціонування */
-    top: 10px; /* Відступ від верхнього краю */
-    left: 10px; /* Відступ від лівого краю */
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
     background-color: red;
     color: white;
     padding: 5px 10px;
@@ -241,15 +254,15 @@ button {
 
 aside {
     background-color: #faf8f8;
-    width: 300px; /* Ширина бокової панелі */
-    height: 100vh; /* Займає всю висоту екрану */
-    position: fixed; /* Фіксоване позиціонування */
-    top: 0; /* У верхньому куті */
-    right: 0; /* У правому куті */
+    width: 300px; 
+    height: 100vh; 
+    position: fixed; 
+    top: 0; 
+    right: 0; 
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Прокрутка, якщо необхідно */
-    overflow-x: hidden; /* Ховаємо горизонтальну прокрутку */
-    z-index: 5; /* Підняти над іншими елементами, якщо необхідно */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    z-index: 5;
     padding-top: 0;
 }
 
@@ -406,36 +419,64 @@ aside {
 /* Оптимізовані медіа-запити */
 @media (max-width: 1500px) {
     #enter {
-        margin-left: calc(13em - (5em * (1500 - 1200) / 300));
+        margin-left: 8em;
+        transition: margin-left 0.5s ease;
     }
 }
 
 @media (max-width: 1400px) {
     #enter {
-        margin-left: calc(8em - (5em * (1400 - 1200) / 200));
+        margin-left: 3em;
+    }
+
+    .pizza-menu{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 1300px) {
     #enter {
-        margin-left: calc(3em - (5em * (1300 - 1200) / 100));
+        margin-left: 1em;
+    }
+}
+
+@media (max-width: 1250px) {
+    #enter {
+        margin-left: 0;
+    }
+    .pizza-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pizza-card{
+        width: 75%;
     }
 }
 
 @media (max-width: 1200px) {
-    #enter {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 1180px) {
     .header-top{
         display: flex;
         justify-content: space-between;
-        gap: 15em;
+        gap: 30em;
     }
     .lab{
         display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header-top{
+        gap: 20em;
+        transition: gap 0.5s ease;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header-top{
+        gap: 15em;
+        transition: gap 0.5s ease;
     }
 }
 
