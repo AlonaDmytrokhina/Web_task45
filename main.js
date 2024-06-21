@@ -172,11 +172,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCart() {
         cartItems.innerHTML = '';
         let total = 0;
+        let totalItems = 0;
 
         Object.keys(cart).forEach(pizzaKey => {
             const cartItem = cart[pizzaKey];
             const sizeInfo = cartItem.size === 'small' ? cartItem.pizza.small_size : cartItem.pizza.big_size;
             total += sizeInfo.price * cartItem.quantity;
+            totalItems += cartItem.quantity;
 
             const cartItemElement = document.createElement('li');
             cartItemElement.classList.add('cart-item');
@@ -219,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cartTotal.textContent = `${total} грн`;
-        document.querySelector('.nBought').textContent = Object.keys(cart).length;
+        document.querySelector('.nBought').textContent = totalItems;
     }
 
     function decreaseQuantity(pizzaKey) {
