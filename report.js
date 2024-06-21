@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             slice: {
                 rows: [
-                    { uniqueName: "Піца" },
+                    { uniqueName: "Піца" }
+                ],
+                columns: [
                     { uniqueName: "Розмір" }
                 ],
                 measures: [
